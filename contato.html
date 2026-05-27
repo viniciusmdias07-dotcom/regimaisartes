@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato | Mimos Personalizados</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="img1/logo.jpg" alt="Logo Mimos Personalizados" class="logo" />
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="catalogo.html">Catálogo </a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contato-container">
+    <h1>Fale Conosco</h1>
+    <p class="descricao-contato">Estamos prontos para transformar sua ideia e sua criatividade em presentes personalizados! Envie sua mensagem abaixo e entraremos em contato. </p
+       <p class="descricao-contato">Consulte a disponibilidade do modelo desejado ou fale conosco para que possamos entender melhor sua ideia e criar algo personalizado para você.
+ </p
+
+    <div class="form-card">
+      <form id="form-contato" class="form-contato">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+
+        <button type="submit" class="botao-contato">Enviar Mensagem</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mimos Personalizados. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById('form-contato').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensagem = document.getElementById('mensagem').value.trim();
+
+      const texto = `Olá! Meu nome é ${nome}, meu e-mail é ${email} e gostaria de falar sobre: ${mensagem}`;
+      const numero = '5511997187161';
+
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
